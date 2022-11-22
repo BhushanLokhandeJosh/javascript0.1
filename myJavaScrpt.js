@@ -2,8 +2,8 @@
 
 function BhushanFunction() {
 
-    var timeAtWhichFunctionCalled = new Date();
-    window.alert("In my function at "+timeAtWhichFunctionCalled);
+    var currentTime = new Date();
+    window.alert("Clicked on time "+currentTime);
     document.getElementById("myid").setAttribute("style","color:Red");
     document.getElementById("myid").innerHTML = "I Recently Joined as Software Engineer in Josh Software PVT. LTD.";
 
