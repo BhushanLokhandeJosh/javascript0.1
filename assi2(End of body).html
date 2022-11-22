@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title> Assignment 2.1 </title>
+  <head>
+	  <title> Assignment 2.1 </title>
+  </head>
 
-</head>
+  <body>
+    <h1 id="test" onmouseover="bigText(this)" onmouseout="normalText(this)" style="color:brown;width: 300px;">
+      Hello world!!!</h1>
 
-<body>
-
-<h1 id="test" onmouseover="bigText(this)" onmouseout="normalText(this)" style="color:brown;width: 300px;">Hello world!!!</h1>
-
-<script>
+    <script>
 
     function bigText(x) {
         document.getElementById("test").innerHTML = "GoodBye World";
@@ -19,16 +18,15 @@
     }
     
     function normalText(x) {
-        
         document.getElementById("test").innerHTML = "Hello world!!!";
         document.getElementById("test").style.color = "brown";
         x.style.height = "100px";
-          x.style.width = "400px";
+        x.style.width = "400px";
 
     }
     
-</script>
+    </script>
 
-</body>
+  </body>
 </html>
 
