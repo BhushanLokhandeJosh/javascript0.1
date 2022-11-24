@@ -1,10 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Assignment 1</title>
 </head>
 <body>
     <script>
@@ -17,9 +13,7 @@
         myName = "Bhushan";
         console.log(myName);
 
-
         //While declaring variable with const keyword it should be initialized at declaration only.
-
         const PI = 3.14;
         console.log(PI);
     
@@ -39,15 +33,17 @@
         console.log(typeof parseInt("Bhushan"));
         console.log(typeof(7 * "Bhushan"));
 
+        //Array.isArray(variable) -> check whether variable is an Array returns boolean value.
+
         if(Array.isArray(numberArray)){
             console.log("The Variable is an Array");
         }
-        else{
+
+        //isNaN id global object method which returns as boolean value.
+       
+        if(isNaN(myName)){
             console.log("The Variable is not an Array or NaN");
         }
-
-        console.log(Array.isArray(myName));
-        
 
     </script>
 </body>
