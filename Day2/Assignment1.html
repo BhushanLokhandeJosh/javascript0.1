@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<head>
+    <title>Assignment 1</title>
+</head>
+<body>
+    <script>
+
+        /* Declare a variable - let a;. On another line assign any value you like to a. 
+        Log the value of a before and after assignment. Try doing the same with const. */
+
+        let myName;
+        console.log(myName);
+        myName = "Bhushan";
+        console.log(myName);
+
+        //While declaring variable with const keyword it should be initialized at declaration only.
+        const PI = 3.14;
+        console.log(PI);
+    
+        /* Use the typeof operator to find the types of different variables. Specially note 
+        what the typeof operator returns for arrays, null values and NaN. How can you find 
+        if a variable is an array or NaN besides typeof? */
+
+        console.log(typeof myName);
+        console.log(typeof PI);
+
+
+        let numberArray = [1,2,3,4,5];
+        console.log(typeof numberArray);
+
+        console.log(typeof null);
+
+        console.log(typeof parseInt("Bhushan"));
+        console.log(typeof(7 * "Bhushan"));
+
+        //Array.isArray(variable) -> check whether variable is an Array returns boolean value.
+
+        if(Array.isArray(numberArray)){
+            console.log("The Variable is an Array");
+        }
+
+        //isNaN is global object method which returns as boolean value.
+       
+        if(isNaN(myName)){
+            console.log("The Variable is not an Array or NaN");
+        }
+
+    </script>
+</body>
+</html>

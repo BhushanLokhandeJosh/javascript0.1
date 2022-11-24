@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Assignment 2.2(Object)</title>
+</head>
+<body>
+    <script>
+
+
+        let obj = {
+            name:"Bhushan",
+            location:"Chandrapur",
+            age:25,
+        };
+
+        console.log("Obj with let keyword");
+        console.log(obj);
+
+        const constObj = {
+            name:"Shubham",
+            location:"Pune",
+            age:30,
+        }
+
+
+        console.log("Obj with const keyword");
+        console.log(constObj);
+
+        console.log("Name Property of Object : "+obj.name);
+        console.log("Name Property of Object : "+constObj.name);
+
+        console.log("Adding property to an object.....................");
+
+        obj.isBachelor = true;
+        constObj.isBachelor = false;
+
+        console.log("Obj with let keyword");
+        console.log(obj);
+
+        console.log("Obj with const keyword");
+        console.log(constObj);
+
+        console.log("Deleting property of an object.....................");
+
+        delete obj.isBachelor;
+        delete constObj.isBachelor;
+
+        console.log("Obj with let keyword");
+        console.log(obj);
+
+        console.log("Obj with const keyword");
+        console.log(constObj);
+
+        console.log("UPdating property of an object.....................");
+
+        obj.name = "Maaz";
+        constObj.name = "Sagar";
+
+        console.log("Obj with let keyword");
+        console.log(obj);
+
+        console.log("Obj with const keyword");
+        console.log(constObj);
+
+
+        /* Conclusion :- 
+            1.Object declared with const keyword cannt be re-assigned while in let we can reassign.
+
+            2.const keyword in object doesnt define constant object but defined constant reference to an object.
+
+        */
+
+
+    </script>
+</body>
+</html>

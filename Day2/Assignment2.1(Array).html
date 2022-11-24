@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Assignment 2.1(Array)</title>
+</head>
+<body>
+
+    <script>
+    
+    
+    /* Use let and const to create arrays and objects. Try modifying, deleting properties within 
+    the array or object. What do you expect to happen in both cases? What actually happens 
+    in both cases. What is the difference between an object declared as a let or a const variable? */
+
+    //With Let Keyword...
+
+    let numberArray = [22,43,23,56,76,89,54,89];
+
+    console.log(numberArray);
+
+    console.log("After Pop and Push Operations");
+
+    console.log("After popping -------> Last element is: "+numberArray.pop());
+    console.log(numberArray);
+    
+    numberArray.push(77);
+    console.log(numberArray);
+
+    console.log("Shifting & unshifting Operations");
+    
+    console.log("After shifting -------> First element is : "+numberArray.shift());
+    console.log(numberArray);
+
+    numberArray.unshift(60);
+    console.log(numberArray);
+
+    console.log("Splicing and slicing operations");
+
+    numberArray.splice(2,1,12,13,14);
+    console.log(numberArray);
+
+    console.log("-----------------------------------------------------------");
+
+    //With const keyword...
+
+    const names = ["Bhushan","Maaz","Akshay","Sagar"];
+
+    console.log(names);
+
+    //Arrays declared with const keyword Cannot be Reassigned.
+    //names = ["Mahesh","Jayesh","Lokesh"];
+
+    names.push("Sagar");
+    console.log(names);
+
+    console.log("After shifting -------> First element is : "+names.shift());
+    console.log(numberArray);
+
+    console.log("After splicing");
+
+    names.splice(2,0,"Prashant","Vaibhav");
+
+    console.log(names);
+
+
+    /* Conclusion :- 
+        1.Array declared with const keyword cannt be re-assigned while in let we can reassign.
+
+        2.const keyword in array doesnt define constant array but defined constant reference to an array.
+
+        3.Array declared with const must be initialized when it is declared while not such mandatory in 
+        case of let keyword.
+
+    */
+
+    
+
+    </script>
+
+    
+</body>
+</html>
