@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> 
+			Assignment 2.1 	
+		</title>
+
+			<script>
+
+				function bigText(x) {
+					document.getElementById("test").innerHTML = "GoodBye World";
+					document.getElementById("test").style.color = "blue";
+		  			x.style.height = "100px";
+		  			x.style.width = "400px";
+				}
+		
+				function normalText(x) {
+			
+					document.getElementById("test").innerHTML = "Hello world!!!";
+					document.getElementById("test").style.color = "brown";
+					x.style.height = "100px";
+		  			x.style.width = "400px";
+
+				}
+		
+			</script>
+	</head>
+
+	<body>
+
+		<h1 id="test" onmouseover="bigText(this)" onmouseout="normalText(this)" style="color:brown;width: 300px;">
+			Hello world!!!</h1>
+
+	</body>
+
+</html>
+
+
