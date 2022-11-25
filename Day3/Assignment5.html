@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Assignment 5</title>
+</head>
+<body>
+    
+    <script>
+
+        // Can you use return instead of break in loops ?
+
+
+        myFunction();
+
+        function myFunction(){
+            let x = 1;
+            while(true){
+                if(x == 0){
+                console.log("Break statement executing...");
+                break;  
+                }
+                else if(x == 1){
+                    console.log("Return statement executing...");
+                    console.log(x);
+                    return;
+                }
+            }
+            console.log(x);
+        }
+
+
+
+        /* 
+        Conclusion : 
+
+        1.Return just jumps back directly to the function call returning the value after it and everything
+         in function after return statement is ignored.
+
+        2.Break statement will break from the current loop and executes the statement outside of the current 
+        loop.
+
+        3.So return itself can act as a break statement for functions and no further break is required while
+        vice versa is not true.
+
+        */
+
+    </script>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Yes, you can use return instead of break break is optional and is used to prevent “falling” through all the other case statements. So return can be used in a similar fashion, as return ends the function execution. -->
