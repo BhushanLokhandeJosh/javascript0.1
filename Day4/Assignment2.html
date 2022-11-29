@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Assignment 2</title>
+</head>
+<body>
+
+    <script>
+        /* Take a function that accepts a function as a parameter 
+        (also known as callback function). 
+
+        function test(callback){
+            callback();
+        }
+        function callbackFunc(){
+        console.log(“Calling the callback function”)
+        return 5;
+        } 
+    
+        Explore the following cases - what is printed in the console, 
+        and what gets returned:
+
+        test(callbackFunc)
+
+        test(callbackFunc())
+
+        test(() => callbackFunc())
+        
+        */
+
+        function test(callback){
+            console.log(callback());
+        }
+
+        function callbackFunc(){
+            console.log("Calling the callback function...");
+            return 5;
+        }
+
+        //Executed successfully.
+        test(() => callbackFunc());
+        
+
+        //Executed successfully.
+        test(callbackFunc);
+
+
+        //Not executed.Uncaught TypeError: callback is not a function.
+       // test(callbackFunc());
+
+
+        function check(callback){
+            return callback();
+        }
+
+        console.log(check(callbackFunc));
+
+        /*
+
+        1. What happens when you return callback from the check function?
+        
+        Reference / pointer to function is been passed to check function and
+        in check function we are returning callback function by executing it.
+        */
+
+        console.log(check(callbackFunc()));
+
+        /* 
+
+        2. What happens when you return callback() from the check function?
+        
+        //Uncaught TypeError: callback is not a function
+        In this case,callback function is executed and its result has been
+        passed to check function and thus it will not execute as no such
+        function exists there. */
+
+
+        
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
