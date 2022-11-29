@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Assignment 2</title>
+</head>
+<body>
+    <script>
+        /* Q. What do you think would happen if you pass an index beyond the 
+       range of the string? Or if you pass a negative index? Try it out. */
+
+        let str = "Bhushan";
+
+        for(let i=0;i<=str.length;i++){
+
+        console.log(str.charAt(i));
+
+        }
+
+        console.log(str.charAt(-10));
+
+
+        /* CONCLUSION :
+
+        1.If the value of index is negative then it tries to access the location 
+        which is not allocated to the String which is similar to accessing
+        an index greater than the size of the String for such case it will 
+        give undefined as result.
+
+        */
+
+    </script>
+    
+</body>
+</html>
+        
