@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Assignemnt 3</title>
+</head>
+<body>
+    <script>
+        /* Q. Do you think JSON.stringify would work for arrays as well? 
+        What about nested objects?  */
+
+        //for Arrays...Yes It will work.
+
+        const arr = ["Bhushan","Maaz","Sagar","Harshal"];
+
+        let obj = JSON.stringify(arr);
+
+        console.log(typeof(obj));
+
+        console.log(obj);
+
+
+        //for Nested Objects...Yes It will work.
+
+        const nestedObj = {name:"Bhushan",City:"Chandrapur",Hobbies:[{
+            sports:"Cricket",fun:"OTT Movies",other:"Volunteer Blood Camps"
+        }]};
+
+        console.log(typeof(nestedObj));
+
+        let stringifiedObject = JSON.stringify(nestedObj);
+
+        console.log(typeof(stringifiedObject));
+
+        console.log(stringifiedObject);
+
+
+
+        /* Q. What happens if we pass numbers,strings, undefined, null to 
+        JSON.stringify ? */
+
+        console.log(JSON.stringify(23)+"---"+typeof(JSON.stringify(23)));
+
+        console.log(JSON.stringify("Bhushan")+"---"+typeof(JSON.stringify("Bhushan")));
+
+
+        /* JSON.stringify will omit all object attributes that are undefined.
+        If we parse that string back,and try to access that attribute - it 
+        will be undefined by design. */
+
+        let checkUndefined;
+
+        console.log(JSON.stringify(checkUndefined)+"---"+typeof(JSON.stringify(checkUndefined)));
+
+        console.log(JSON.stringify(null)+"---"+typeof(JSON.stringify(null)));
+
+
+
+
+    </script>
+
+
+</body>
+</html>
