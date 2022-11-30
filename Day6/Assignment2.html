@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Assignment 2</title>
+</head>
+<body>
+
+    <script>
+        /* 2. What makes a method mutating or non mutating in Javascript? 
+        Find out whether each of the following methods are mutating or 
+        non-mutating. How can you verify this?:
+
+        push , pop , filter , find , sort , map. */
+
+
+        const arr = [34,12,11,32,22,54,45,65];
+        console.log("At Initial stage elements are : "+arr);
+
+        //Push() ---> Mutating.
+        arr.push(23); 
+        console.log("After Pushing element at last : "+arr);
+
+
+        //Pop() ---> Mutating.
+        arr.pop();   
+        console.log("After Popping element from last : "+arr);
+
+
+        //Filter() ---> Non Mutating.
+        const evenArray = arr.filter((number) => number % 2 == 1);
+        console.log("Original Array : "+arr);
+        console.log("After Using filter() Method : "+evenArray);
+
+
+        //Find() ---> Non Mutating.
+        const DivideByFiveArray = arr.find((number) => (number % 5) === 0 );
+        console.log("Original Array : "+arr);
+        console.log("After Using find() Method : "+DivideByFiveArray);
+
+
+        //Sort() ---> Mutating.
+        arr.sort((number1,number2) => {
+            return number1 > number2 ? 1 : -1 ;
+        });
+
+        console.log("After Using sort() Method : "+arr);
+
+
+        //Map() ---> Non Mutating.
+        const ModifiedArray = arr.map((number) => (number*10));
+        console.log("Original Array : "+arr);
+        console.log("After Using Map() Method : "+ModifiedArray);
+        
+
+        /* CONCLUSION:
+
+        1.Mutating methods are ones that change the object after the method 
+        has been used without creating a new variable or reassigning an 
+        existing one. 
+        
+        2.Non-mutating methods do not change the object after the method has 
+        been used. Instead we create a new reference with those changes in 
+        object and original object kept idle.
+
+        */
+
+    </script>
+    
+</body>
+</html>
