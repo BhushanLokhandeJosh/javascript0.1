@@ -67,11 +67,7 @@
     field includes that string. */
 
     function filterObject(arrayOfObjects,name) {
-        return arrayOfObjects.filter((obj) => filterByObjFirstName(obj,name));
-    }
-
-    function filterByObjFirstName(obj,name){
-        return obj.first_name.includes(name);
+        return arrayOfObjects.filter((obj) => obj.first_name.includes(name));
     }
 
     console.log(filterObject(arrOfObjects,"Kathleen"));
