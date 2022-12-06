@@ -70,6 +70,10 @@ let userNames = [
     id: 4,
     first_name: "Amata",
   },
+  {
+    id: 6,
+    first_name: "Bhushan",
+  },
 ];
 
 let userEmails = [
@@ -89,6 +93,10 @@ let userEmails = [
     id: 3,
     email: "dkilshall2@elpais.com",
   },
+  {
+    id: 5,
+    email: "bhushan@elpais.com",
+  },
 ];
 
 function mergeBYId(arr1, arr2) {
@@ -105,19 +113,28 @@ function mergeBYId(arr1, arr2) {
   let i = 0,
     j = 0;
 
-  while (i < arr1.length || j < arr2.length) {
-    if (arr1[i].id == arr2[j].id) {
-      arr1[i].email = arr2[j].email;
-      result.push(arr1[i]);
+  while (i < arr1.length && j < arr2.length) {
+    if (arr1[i]["id"] == arr2[j]["id"]) {
+      result.push({ ...arr1[i], ...arr2[j] });
       i++;
       j++;
-    } else if (arr1[i].id < arr2[j].id) {
+    } else if (arr1[i]["id"] < arr2[j]["id"]) {
       result.push(arr1[i]);
       i++;
-    } else if (arr1[i].id > arr2[j].id) {
+    } else if (arr1[i]["id"] > arr2[j]["id"]) {
       result.push(arr2[j]);
       j++;
     }
+  }
+
+  while (i < arr1.length) {
+    result.push(arr1[i]);
+    i++;
+  }
+
+  while (j < arr2.length) {
+    result.push(arr2[i]);
+    j++;
   }
 
   return result;
