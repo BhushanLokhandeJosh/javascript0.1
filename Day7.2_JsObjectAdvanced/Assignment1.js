@@ -8,6 +8,7 @@ let object = {
     area: "Little Whinging",
     city: "Surrey",
     state: "England",
+    numbers: [1, 2, 3, 4],
   },
 };
 
@@ -18,7 +19,10 @@ let shallowCloning = { ...object };
 function checkCloning(clonedObject, Object) {
   let flag = true;
   for (const props in clonedObject) {
-    if (typeof clonedObject[props] === "object") {
+    if (
+      typeof clonedObject[props] === "object" ||
+      Array.isArray(clonedObject[props])
+    ) {
       flag = false;
     }
   }
