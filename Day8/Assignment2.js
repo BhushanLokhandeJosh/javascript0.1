@@ -2,7 +2,10 @@
 an API endpoint (GET https://reqres.in/api/users ). Log the data 
 into the console once it is received. */
 
-const promises = fetch("https://reqres.in/api/users", { method: "get" });
+const promises = new Promise((resolve, reject) => {
+  const data = fetch("https://reqres.in/api/users", { method: "get" });
+  resolve(data);
+});
 
 promises
   .then((data) => {
