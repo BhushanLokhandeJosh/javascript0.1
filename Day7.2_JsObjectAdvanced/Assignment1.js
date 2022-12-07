@@ -19,10 +19,7 @@ let shallowCloning = { ...object };
 function checkCloning(clonedObject, Object) {
   let flag = true;
   for (const props in clonedObject) {
-    if (
-      typeof clonedObject[props] === "object" ||
-      Array.isArray(clonedObject[props])
-    ) {
+    if (typeof clonedObject[props] === "object" || Array.isArray(props)) {
       flag = false;
     }
   }
