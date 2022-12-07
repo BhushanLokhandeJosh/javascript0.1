@@ -27,10 +27,8 @@ in logging the message passed by resolve callback function.
 Response 2 ->
 If (Math.random() > 0.5) condition fails, then executor calls reject 
 callback function thus promise object .catch method will be called but
-there after logging message passed by callback function, again error 
-will be thrown and that error will be handled by immediate catch method 
-and thus logging the respective error message. 
-
-
+there after logging message passed by callback function,now promise will
+not returning anything so when we call .then method it will print 
+undefined. 
 
   */

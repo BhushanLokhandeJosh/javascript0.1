@@ -10,3 +10,14 @@ promises
   })
   .then((users) => console.log(users))
   .catch((err) => console.log("Error occurs Here", err));
+
+console.log("---------------------");
+
+const url = "https://reqres.in/api/users";
+
+const asyncFn = async () => {
+  const response = await fetch(url).then((res) => res.json());
+  return response;
+};
+
+asyncFn();
