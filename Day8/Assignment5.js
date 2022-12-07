@@ -9,7 +9,7 @@ const testAsyncFunction = () => {
     }
   }).catch((err) => {
     console.log("Error caught in testAsyncFunction : ", err);
-    throw new Error("Forced error...");
+    return err;
   });
 };
 testAsyncFunction()

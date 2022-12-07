@@ -7,10 +7,14 @@ promise
   .then((data) => data.json())
   .then((response) => {
     console.log("Wait for Few Seconds while data has been loading.....");
-    setTimeout(requestPause, 2000, response);
+    const start = Date.now();
+    console.log(start - Date.now());
+    setTimeout(requestPause, 2000, response, start);
   })
   .catch((err) => console.log("Error Occurs while fetching", err));
 
-function requestPause(response) {
+function requestPause(response, start) {
   console.log(response);
+  const diff = Date.now() - start;
+  console.log(diff);
 }
