@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Assignment 4</title>
+  </head>
+  <body onload="getKeyFromDropdown(),getKeyOrderFromDropdown()">
+    <!-- Create a blog list page that fetches a list of users 
+        from a mock API and adds them to a table on the page after
+         loading. Add a button to sort the users by name. Add an 
+         input to filter the table by search. (Optional: Show 
+         “Loading…” or a loading spinner on the screen till the 
+         data loads) -->
+    <h1>Table Data</h1>
+
+    <script>
+      let userArray = [];
+      let getKeyValue;
+      let getOrderFromDropdown;
+
+      let emptyObject = {
+        id: "-", 
+        email: '-', 
+        first_name: '-', 
+        last_name: '-', 
+        avatar: '-'
+      };
+
+      
+      const output = fetch("https://reqres.in/api/users")
+        .then((response) => response.json())
+        .then((result) => {
+          userArray = result.data;
+          console.log(userArray);
+          printTable(userArray);
+        });
+      
+
+      function printTable(output) {
+        let table = "<table class='table' border='1' style='border:1px solid' cellpadding='20'>";
+        table +=
+          "<tr><th>id</th><th>email</th><th>First_Name</th><th>Last_Name</th><th>Photo</th></tr>";
+        for (let i = 0; i < output.length; i++) {
+          table += "<tr>";
+          table += "<td>" + output[i].id + "</td>";
+          table += "<td>" + output[i].email + "</td>";
+          table += "<td>" + output[i].first_name + "</td>";
+          table += "<td>" + output[i].last_name + "</td>";
+          table += "<td><img src='"+output[i].avatar+"'/></td>";
+          table += "</tr>";
+        }
+        table += "</table>";
+
+        document.getElementById("tableData").innerHTML = table;
+      };
+
+
+      function sortUsersDataByKey(){
+        userArray.sort((user1,user2)=>
+        {
+          console.log("In sort function");
+          console.log(getOrderFromDropdown);
+          console.log(getKeyValue);
+          if(getOrderFromDropdown == "asc"){
+            return user1[getKeyValue] > user2[getKeyValue] ? 1 : -1;
+
+          }else if(getOrderFromDropdown == "desc"){
+            return user1[getKeyValue] > user2[getKeyValue] ? -1 : 1;
+
+          }
+          
+        });
+        printTable(userArray);
+      };
+
+      function searchByKey(){
+        let searchValue = document.getElementById("text").value;
+
+      
+        let newArray = userArray.filter((e) => {
+          let tempString = e[getKeyValue].toLowerCase();
+          return tempString.includes(searchValue.toLowerCase());
+        });
+
+        if(newArray.length === 0){
+          printTable(newArray.push(emptyObject));
+        }
+        printTable(newArray);
+      };
+
+
+      function getKeyFromDropdown(){
+        getKeyValue = document.getElementById('selectedKey').value;
+        console.log(getKeyValue);
+      };
+
+      function getKeyOrderFromDropdown(){
+        getOrderFromDropdown = document.getElementById("selectedOrder").value;
+        console.log(getOrderFromDropdown);
+      };
+
+    </script>
+
+    <label> Select field </label>  
+    <select id="selectedKey" onchange="getKeyFromDropdown()">  
+      <option value = "id" id="id" selected> Id  </option>  
+      <option value = "first_name" id="firstName"> First_name </option>  
+      <option value = "last_name" id="lastName"> Last_Name </option>  
+      <option value = "email" id="email"> email </option>  
+    </select> 
+
+    <label> Select Order </label>  
+    <select id="selectedOrder" onchange="getKeyOrderFromDropdown()">  
+      <option value = "desc" id="desc" selected > Descending  </option>  
+      <option value = "asc" id="asc" > Ascending </option>
+    </select>
+    <br/>
+    <button name="sort" onclick="sortUsersDataByKey()" style="width: 100">Sort</button> 
+
+    <input type="text" id="text" placeholder="Enter Text" onkeyup="searchByKey()">
+
+    <div id="tableData"></div>
+
+
+    </table>
+  </body>
+</html>
